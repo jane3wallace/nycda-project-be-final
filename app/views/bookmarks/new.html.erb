@@ -4,12 +4,24 @@
   </h2>
   <%= form_for @bookmark do |b| %>
     <div>
+      <%= b.label :url %>
+      <%= b.text_field :url %>
+    </div>
+    <div>
       <%= b.label :title %>
       <%= b.text_field :title %>
     </div>
     <div>
-      <%= b.label :url %>
-      <%= b.text_field :url %>
+      <%= b.label :category %>
+      <%= b.text_field :category %>
+    </div>
+    <div>
+      <%= b.label :subcategory %>
+      <%= b.text_field :subcategory %>
+    </div>
+    <div>
+      <%= b.label :notes %>
+      <%= b.text_area :notes %>
     </div>
     <div>
       <%= b.submit :create %>

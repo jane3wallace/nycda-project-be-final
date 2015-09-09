@@ -1,5 +1,6 @@
 class Bookmark < ActiveRecord::Base
 
+  # one to many relationship for users table to bookmarks table
   belongs_to :user
 
   def self.all_bookmark_titles
@@ -10,5 +11,8 @@ class Bookmark < ActiveRecord::Base
       display_titles << "#{b.title}"
     end
   end
+
+  # def 
+  # end
 
 end

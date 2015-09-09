@@ -16,9 +16,12 @@ class BookmarksController < ApplicationController
 
   def create
     bookmark = Bookmark.new
-    bookmark.title = params[:bookmark][:title]
-    bookmark.url = params[:bookmark][:url]
     bookmark.user_id = current_user.id
+    bookmark.url = params[:bookmark][:url]
+    bookmark.title = params[:bookmark][:title]
+    bookmark.category = params[:bookmark][:category]
+    bookmark.subcategory = params[:bookmark][:subcategory]
+    bookmark.notes = params[:bookmark][:notes]
     if bookmark.save
       flash[:notice] = "Your bookmark was created!"
     else
