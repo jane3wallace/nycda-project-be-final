@@ -1,0 +1,10 @@
+<br><br>
+<% if user_signed_in? %>
+	<div>Hello <%= current_user.email %>!</div>
+  <div><%= image_tag current_user.avatar.url(:thumb) %></div>
+  <%= link_to("Edit Profile", edit_user_registration_path) %> | 
+  <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
+<% else %>
+  <div><%= link_to("Sign In", new_user_session_path) %></div>
+  <div>New user? <%= link_to("Sign Up", new_user_registration_path) %></div>
+<% end %>
