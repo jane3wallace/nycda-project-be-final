@@ -1,8 +1,12 @@
 <div>
-	<h1>Bookmarks</h1>
+	<h1>My Bookmarks</h1>
 </div>
 <% @bookmarks.each do |bookmark| %>
-	<div><a href="/bookmarks/<%= bookmark.id %>"><h2><%= bookmark.title %></h2></a></div>
+	<div>
+    <h2><%= bookmark.title %></h2>
+    <a href="http://<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a><br>
+    <em><a href="/bookmarks/<%= bookmark.id %>">Details</a></em>
+  </div>
 <% end %>
 <br>
 <div>

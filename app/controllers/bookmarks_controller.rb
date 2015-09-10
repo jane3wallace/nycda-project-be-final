@@ -6,14 +6,6 @@ class BookmarksController < ApplicationController
     @bookmarks = Bookmark.all
   end
 
-  def show
-    @bookmark = Bookmark.find(params[:id])
-  end
-
-  def new
-    @bookmark = Bookmark.new
-  end
-
   def create
     bookmark = Bookmark.new
     bookmark.user_id = current_user.id
@@ -30,8 +22,35 @@ class BookmarksController < ApplicationController
     redirect_to bookmark_path(bookmark.id)
   end
 
+  def new
+    @bookmark = Bookmark.new
+  end
+
+  def edit
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def show
+    @bookmark = Bookmark.find(params[:id])
+  end
+
+  def update
+    bookmark = Bookmark.find(params[:id])
+    bookmark.url = params[:bookmark][:url]
+    bookmark.title = params[:bookmark][:title]
+    bookmark.category = params[:bookmark][:category]
+    bookmark.subcategory = params[:bookmark][:subcategory]
+    bookmark.notes = params[:bookmark][:notes]
+    if bookmark.save
+      flash[:notice] = "The bookmark was updated."
+    else
+      flash[:alert] = "This bookmark cannot be updated."
+    end
+    redirect_to bookmark_path(bookmark.id)
+  end
+
   def destroy
-    bookmark = bookmark.find(params[:id])
+    bookmark = Bookmark.find(params[:id])
     if bookmark.destroy
       flash[:notice] = "The bookmark was deleted."
     else
