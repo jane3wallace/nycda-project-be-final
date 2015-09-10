@@ -12,7 +12,15 @@ class Bookmark < ActiveRecord::Base
     end
   end
 
-  # def 
-  # end
+  def self.current_user_titles
+    bookmarks = current_user.bookmarks
+
+    current_user_list = []
+    bookmarks.each do |b|
+      if b.user_id == current_user.id
+        current_user_list << "#{b.title}"
+      end
+    end 
+  end
 
 end

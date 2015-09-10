@@ -1,23 +1,23 @@
 <div>
   <h1><%= @bookmark.title %></h1>
 	<p>
-		<strong><a href="http://<%= @bookmark.url %>" target="_blank"><%= @bookmark.url %></a></strong>
+		<strong><a href="<%= @bookmark.url %>" target="_blank"><%= @bookmark.url %></a></strong>
 	</p>
   <p>
     <%= @bookmark.notes %>
   </p>
 </div>
-<ul>
-  <li>
-    <em>Category: <%= @bookmark.category %></em>
-  </li>
-  <li>
-    <em>Subcategory: <%= @bookmark.subcategory %></em>
-  </li>
-  <li>
+<div>
+  <span>
+    <em>Category: <%= @bookmark.category %></em> | 
+  </span>
+  <span>
+    <em>Subcategory: <%= @bookmark.subcategory %></em> | 
+  </span>
+  <span>
     <em>Created: <%= @bookmark.created_at %></em>
-  </li>
-</ul>
+  </span>
+</div>
 </br>
 <div>
   <%= link_to("Edit This Bookmark", edit_bookmark_path(@bookmark.id)) %> | <%= link_to("Delete This Bookmark", bookmark_path(@bookmark.id), method: :delete) %>

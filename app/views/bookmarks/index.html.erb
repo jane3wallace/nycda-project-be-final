@@ -1,10 +1,10 @@
 <div>
 	<h1>My Bookmarks</h1>
 </div>
-<% @bookmarks.each do |bookmark| %>
+<% current_user.bookmarks.each do |bookmark| %>
 	<div>
     <h2><%= bookmark.title %></h2>
-    <a href="http://<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a><br>
+    <span><a href="<%= bookmark.url %>" target="_blank"><%= bookmark.url %></a></span><br>
     <em><a href="/bookmarks/<%= bookmark.id %>">Details</a></em>
   </div>
 <% end %>
