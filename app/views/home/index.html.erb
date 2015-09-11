@@ -1,6 +1,6 @@
 <br><br>
 <% if user_signed_in? %>
-	<div>Hello <%= current_user.email %>!</div>
+	<div>Hello <%= current_user.first_name %>!</div>
   <div><%= image_tag current_user.avatar.url(:thumb) %></div>
   <%= link_to("Edit Profile", edit_user_registration_path) %> | 
   <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
