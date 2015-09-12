@@ -15,4 +15,7 @@ class User < ActiveRecord::Base
     validates_attachment_content_type :avatar,
     :content_type => /\Aimage\/.*\Z/
 
+  # requires first_name at sign up
+  validates :first_name, :presence => true
+
 end
