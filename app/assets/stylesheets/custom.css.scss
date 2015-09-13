@@ -1,0 +1,30 @@
+html {
+	margin: 0, auto;
+}
+
+body.home-page {
+	/*margin: 0;*/
+    background-image: url("open_book.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /*0% -6%;*/
+    /*background-attachment: fixed;*/
+    /*top: 0%;*/
+}
+
+#navbar-collapse-1 {
+	/*background-color: aqua;*/
+}
+
+.round-image-50 {
+    background-color: black;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    /*height: 60px;*/
+    width: 56px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}

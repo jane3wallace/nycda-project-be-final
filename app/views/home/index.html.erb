@@ -1,13 +1,27 @@
 <br><br>
 <% if user_signed_in? %>
-	<div>Hello <%= current_user.first_name %>!</div>
-  <div><%= image_tag current_user.avatar.url(:thumb) %></div>
-  <%= link_to("Edit Account", edit_user_registration_path) %> | 
-  <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
-  <div>
-    <%= link_to("My Bookmarks", bookmarks_path) %>
+  <div class="row">
+  	<div class="col-sm-12">
+      <h2>Hello <%= current_user.first_name %>!</h2>
+    </div>
+    <div class="col-sm-6">
+      <%= image_tag(current_user.avatar.url(:medium), class: 'img-rounded')  %>
+      <%= link_to("My Bookmarks", bookmarks_path) %>
+    </div>
+    <div class="col-sm-12">
+      <br /><%= link_to("Edit Account", edit_user_registration_path) %> | 
+      <%= link_to("Sign Out", destroy_user_session_path, method: :delete) %>
+    </div>
+  <% else %>
+    <div class="home-page">
+      <!-- <img src="/assets/open_book.jpg"> -->
+      <div class="col-sm-12">
+        <h2>Welcome to Bookmark App!</h2>
+      </div>
+      <div class="col-sm-12">
+        <div><%= link_to("Sign In", new_user_session_path) %> to see your bookmarks.</div>
+        <div>New user? <%= link_to("Sign Up", new_user_registration_path) %></div>
+      </div>
+    </div>
   </div>
-<% else %>
-  <div><%= link_to("Sign In", new_user_session_path) %></div>
-  <div>New user? <%= link_to("Sign Up", new_user_registration_path) %></div>
 <% end %>

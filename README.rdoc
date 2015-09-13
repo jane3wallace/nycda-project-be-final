@@ -13,3 +13,5 @@ These are the additional features that I included in my app:
 
 * Integrated Bootstrap to make front end more attractive
 
+* Included navigation menu with profile pic
+

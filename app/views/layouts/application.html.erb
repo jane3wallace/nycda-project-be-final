@@ -13,8 +13,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <a href="/">Home</a>
+
+  <!-- navigation menu -->
+  <div class="collapse navbar-collapse navbar-inverse" role="navigation" id="navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-left">
+      <li><a href="/">Bookmark App</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+      <li><%= link_to("My Bookmarks", bookmarks_path) %></li>
+      <li><%= link_to("Edit Account", edit_user_registration_path) %></li>
+      <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+      <li><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></li>
+      <% else %>
+      <li><%= link_to("Sign In", new_user_session_path) %></li>
+      <% end %>
+    </ul>
+  </div>
   
+  <!-- flash notices -->
   <% if flash[:notice] %>
     <div class="alert alert-success alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -33,7 +50,11 @@
     </div>
   <% end %>
 
-<%= yield %>
+<!-- page content -->
+<div class="container">
+  <%= yield %>
+</div>
+
 
 </body>
 </html>
