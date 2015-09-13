@@ -17,9 +17,9 @@ class BookmarksController < ApplicationController
     if bookmark.save
       flash[:notice] = "Your bookmark was created!"
     else
-      flash[:alert] = "Sorry, this bookmark was not created."
+      flash[:alert] = "Sorry, your bookmark was not created. An url is required."
     end
-    redirect_to bookmark_path(bookmark.id)
+    redirect_to bookmarks_path
   end
 
   def new

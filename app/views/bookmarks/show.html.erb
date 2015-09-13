@@ -1,28 +1,30 @@
-<div>
-  <h1><%= @bookmark.title %></h1>
-	<p>
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @bookmark.title %></h1>
+  </div>
+	<p class="col-md-12">
 		<strong><a href="<%= @bookmark.url %>" target="_blank"><%= @bookmark.url %></a></strong>
 	</p>
-  <p>
+  <p class="col-md-12">
     <%= @bookmark.notes %>
   </p>
-</div>
-<div>
-  <span>
-    <em>Category: <strong><%= @bookmark.category %></strong></em> | 
-  </span>
-  <span>
-    <em>Subcategory: <strong><%= @bookmark.subcategory %></strong></em> | 
-  </span>
-  <span>
-    <em>Created: <%= @bookmark.created_at %></em>
-  </span>
+  <div class="col-md-12">
+    <span>
+      <em>Category: <strong><%= @bookmark.category %></strong></em> | 
+    </span>
+    <span>
+      <em>Subcategory: <strong><%= @bookmark.subcategory %></strong></em> | 
+    </span>
+    <span>
+      <em>Created: <%= @bookmark.created_at %></em>
+    </span>
+  </div>
 </div>
 </br>
-<div>
-  <%= link_to("Edit This Bookmark", edit_bookmark_path(@bookmark.id)) %> | <%= link_to("Delete This Bookmark", bookmark_path(@bookmark.id), method: :delete) %>
+<div class="col-md-12">
+  <%= link_to("Edit This Bookmark", edit_bookmark_path(@bookmark.id)) %> | <%= link_to("Delete This Bookmark", bookmark_path(@bookmark.id), data: { confirm: "Are you sure?" }, method: :delete) %>
 </div>
-<br>
-<div>
-  <%= link_to("Back to List of Bookmarks", bookmarks_path) %>
+
+<div class="col-md-12">
+  <br /><%= link_to("Back to List of Bookmarks", bookmarks_path) %>
 </div>

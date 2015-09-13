@@ -23,4 +23,7 @@ class Bookmark < ActiveRecord::Base
     end 
   end
 
+  # requires url to create bookmark
+  validates :url, :presence => true
+
 end

@@ -1,6 +1,6 @@
 == README
 
-FINAL PROJECT
+FINAL PROJECT - 
 Build a RoR app with log in capability and relational database.
 
 I created a bookmark app that allows the user to sign in and add/edit/delete bookmarks. Bookmarks are linked to users with a one to many relationship.
@@ -9,7 +9,7 @@ These are the additional features that I included in my app:
 
 * Used paperclip gem to include profile pic/avatar
 
-* Integrated Bootstrap to make front end more attractive
+* Added medium and thumb sized missing.png images as generic default profile pic
 
-* ...
+* Integrated Bootstrap to make front end more attractive
 
