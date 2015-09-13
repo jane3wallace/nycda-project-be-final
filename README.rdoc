@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+FINAL PROJECT
+Build a RoR app with log in capability and relational database.
 
-Things you may want to cover:
+I created a bookmark app that allows the user to sign in and add/edit/delete bookmarks. Bookmarks are linked to users with a one to many relationship.
 
-* Ruby version
+These are the additional features that I included in my app:
 
-* System dependencies
+* Used paperclip gem to include profile pic/avatar
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Integrated Bootstrap to make front end more attractive
 
 * ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
