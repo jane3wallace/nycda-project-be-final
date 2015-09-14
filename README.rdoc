@@ -15,4 +15,6 @@ These are the additional features that I included in my app:
 
 * Included navigation menu with profile pic
 
+* Set up mailer for password reset
+
 * Deployed to heroku http://fathomless-hollows-2583.herokuapp.com/

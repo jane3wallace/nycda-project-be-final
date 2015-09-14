@@ -39,7 +39,7 @@
       <div class="col-sm-6">
         <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
       </div>
-      <p class="help-block"><% if @minimum_password_length %>
+      <p class="help-block col-sm-3"><% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %></p><br />
     </div>
