@@ -17,7 +17,7 @@
   <!-- navigation menu -->
   <div class="collapse navbar-collapse navbar-inverse" role="navigation" id="navbar-collapse-1">
     <ul class="nav navbar-nav navbar-left">
-      <li><a href="/">Bookmark App</a></li>
+      <li><a class="brand" href="/">Bookmark App</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if current_user %>
@@ -51,7 +51,7 @@
   <% end %>
 
 <!-- page content -->
-<div class="container">
+<div class="container-fluid">
   <%= yield %>
 </div>
 
