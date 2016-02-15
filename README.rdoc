@@ -1,8 +1,10 @@
-== README
+== NYCDA BE Final Project: <i>RoR App</i>
+A Bookmark App that I created during my New York Code + Design Academy Back End 101 class in New York. 
 
-FINAL PROJECT - 
-Build a RoR app with log in capability and relational database.
+=== Assignment: 
+Build a RoR app with log in capability and a relational database.
 
+=== About My App:
 I created a bookmark app that allows the user to sign in and add/edit/delete bookmarks. Bookmarks are linked to users with a one to many relationship.
 
 These are the additional features that I included in my app:
