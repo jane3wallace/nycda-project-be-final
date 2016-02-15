@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bookmark App</title>
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Gravitas+One' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- <script src="js/bootstrap.min.js"></script> -->
@@ -15,22 +16,37 @@
 <body>
 
   <!-- navigation menu -->
-  <div class="collapse navbar-collapse navbar-inverse" role="navigation" id="navbar-collapse-1">
-    <ul class="nav navbar-nav navbar-left">
-      <li><a class="brand" href="/">Bookmark App</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <% if current_user %>
-      <li><%= link_to("My Bookmarks", bookmarks_path) %></li>
-      <li><%= link_to("Edit Account", edit_user_registration_path) %></li>
-      <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
-      <li><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></li>
-      <% else %>
-      <li><%= link_to("Sign In", new_user_session_path) %></li>
-      <% end %>
-    </ul>
+  <div class="navbar navbar-fixed-top navbar-inverse" role="navigation" id="navbar-collapse-1">
+    <div class="container">
+      <!-- toggle menu -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#toggle-menu" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><strong>mark<span class="brand-white">it</span></strong></a>
+      </div>
+
+      <!-- <ul class="nav navbar-nav navbar-left">
+        <li><a class="brand" href="/">Bookmark App</a></li>
+      </ul> -->
+      <div class="collapse navbar-collapse" id="toggle-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_user %>
+          <li><%= link_to("My Bookmarks", bookmarks_path) %></li>
+          <li><%= link_to("Edit Account", edit_user_registration_path) %></li>
+          <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+          <li><%= link_to("Sign Out", destroy_user_session_path, method: :delete) %></li>
+          <% else %>
+          <li><%= link_to("Sign In", new_user_session_path) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
-  
+
   <!-- flash notices -->
   <% if flash[:notice] %>
     <div class="alert alert-success alert-dismissible" role="alert">
@@ -50,10 +66,10 @@
     </div>
   <% end %>
 
-<!-- page content -->
-<div class="container-fluid">
-  <%= yield %>
-</div>
+  <!-- page content -->
+  <div class="container-fluid red-links">
+    <%= yield %>
+  </div>
 
 
 </body>

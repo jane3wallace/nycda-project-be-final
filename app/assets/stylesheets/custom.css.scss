@@ -1,21 +1,70 @@
 html {
-	margin: 0, auto;
+	/*margin: 0, auto;*/
 }
 
-/*body {
-  width: 100vw;
-}*/
+body {
+  padding-top: 50px;
+  /*font-family: 'Roboto', sans-serif;*/
+  /*width: 100vw;*/
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+#navbar-collapse-1 {
+  /*background-color: aqua;*/
+}
+
+.navbar-brand {
+  /*font-family: 'Gravitas One', cursive;*/
+  font-size: 26px;
+  color: #BC072A;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-inverse a.navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 26px;
+  color: #BC072A;
+}
+
+.navbar-inverse a.navbar-brand .brand-white {
+  color: white;
+}
+
+.navbar-inverse a:hover.navbar-brand .brand-white {
+  color: #BC072A;
+}
+
+.red-links a {
+  color: #BC072A;
+  text-decoration: none;
+}
+
+.red-links a:hover {
+  color: #9d9d9d;
+  text-decoration: none;
+}
 
 .home-page {
-	/*margin: -200, 0, 0, 0;*/
-  background-image: image-url('open_book.jpg');
+  padding-top: 50px;
+	/*margin: -200, 0, 0, 0;
+  z-index: 1;
+  padding: 0;*/
+  background-image: image-url('apple.jpg');
   background-size: cover;
+  /*width: 100vw;*/
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center; /*0% -6%;*/
   /*background-attachment: fixed;*/
   /*top: 0%;*/
 }
+
+/*.panel {
+  background-color: rgba(255, 255, 255, 0.9);
+}*/
 
 .container-fluid .alt-grid {
   padding-top:0px;
@@ -27,8 +76,8 @@ html {
   /*width: 100vw;*/
 }
 
-#navbar-collapse-1 {
-	/*background-color: aqua;*/
+.alert.alert-success {
+  margin-bottom: 0;
 }
 
 .round-image-50 {
@@ -48,10 +97,14 @@ html {
   color: white; /*#FFA07A #FF9266*/
 }
 
-.salmon {
-  color: #FF9266;
+.red {
+  color: #BC072A;
 }
 
-.salmon > a:hover {
-  color: white;
+.red a:hover {
+  color: #9d9d9d;
+}
+
+.gray {
+  color: #9d9d9d;
 }
